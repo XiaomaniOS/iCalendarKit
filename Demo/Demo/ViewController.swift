@@ -11,9 +11,9 @@ import iCalendarKit
 
 class ViewController: UIViewController {
     enum CalendarFile: String, CaseIterable {
-//        case calendar
+        case calendar
 //        case basic
-        case totalTimeZone
+//        case totalTimeZone
 //        case universityFormatted
 //        case university
         

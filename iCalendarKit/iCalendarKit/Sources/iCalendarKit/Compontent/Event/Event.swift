@@ -21,7 +21,7 @@ public final class Event: Component {
     public var status: String?
     public var description: String?
     public var organizer: Property?
-    public var attendees: Property?
+    public var attendees: [Property]?
     public var priority: Int?
 
     lazy var dateFormatter: DateFormatter = {
@@ -56,7 +56,10 @@ public final class Event: Component {
         case .summary:
             summary = property.valueInfo.value
         case .attendee:
-            attendees = property
+            if nil == attendees {
+                attendees = []
+            }
+            attendees?.append(property)
         case .location:
             location = property.valueInfo.value
         case .priority:
@@ -73,6 +76,11 @@ public final class Event: Component {
     public override func specialPropertyDescription(step: Int = 0, perStep: String = "    ") -> String {
         let totalStep = (0...step + 1).reduce("", { (r, _)  in r + perStep })
         
+        var attendeesDescription = ""
+        if let attendees = attendees {
+            attendeesDescription = attendees.reduce("", { (r, p) in r + p.description(step + 2, perStep) })
+        }
+        
         let result = #"""
         
         \#(totalStep)startDate ==> \#(startDate ?? Date())
@@ -87,7 +95,7 @@ public final class Event: Component {
         \#(totalStep)status ==> \#(status ?? "")
         \#(totalStep)description ==> \#(description ?? "")
         \#(totalStep)organizer ==> \#(organizer?.description(step + 1, perStep) ?? "")
-        \#(totalStep)attendees ==> \#(attendees?.description(step + 1, perStep) ?? "")
+        \#(totalStep)attendees ==> \#(attendeesDescription)
         \#(totalStep)priority ==> \#(priority ?? -10000)
         """#
         
