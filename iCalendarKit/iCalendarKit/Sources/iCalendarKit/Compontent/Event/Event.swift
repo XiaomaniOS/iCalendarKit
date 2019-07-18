@@ -26,7 +26,6 @@ public final class Event: Component {
 
     lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.timeZone = Foundation.TimeZone(secondsFromGMT: 0)
         formatter.dateFormat = "yyyyMMdd'T'HHmmss'Z'"
         return formatter
     }()
