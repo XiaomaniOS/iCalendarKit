@@ -9,11 +9,11 @@
 import Foundation
 
 public final class Event: Component {
-    public var startDate: Date?
-    public var endDate: Date?
-    public var stampDate: Date?
-    public var createdDate: Date?
-    public var lastModifiedDate: Date?
+    public var startDate: String?
+    public var endDate: String?
+    public var stampDate: String?
+    public var createdDate: String?
+    public var lastModifiedDate: String?
     public var sequences: Int?
     public var userID: String?
     public var location: String?
@@ -45,13 +45,13 @@ public final class Event: Component {
         case .transp:
             return
         case .created:
-            createdDate = dateFormatter.date(from: property.valueInfo.value)
+            createdDate = property.valueInfo.value
         case .dtStamp:
-            stampDate = dateFormatter.date(from: property.valueInfo.value)
+            stampDate = property.valueInfo.value
         case .dtStart:
-            startDate = dateFormatter.date(from: property.valueInfo.value)
+            startDate = property.valueInfo.value
         case .dtEnd:
-            endDate = dateFormatter.date(from: property.valueInfo.value)
+            endDate = property.valueInfo.value
         case .summary:
             summary = property.valueInfo.value
         case .attendee:
@@ -82,11 +82,11 @@ public final class Event: Component {
         
         let result = #"""
         
-        \#(totalStep)startDate ==> \#(startDate ?? Date())
-        \#(totalStep)endDate ==> \#(endDate ?? Date())
-        \#(totalStep)stampDate ==> \#(stampDate ?? Date())
-        \#(totalStep)createdDate ==> \#(createdDate ?? Date())
-        \#(totalStep)lastModifiedDate ==> \#(lastModifiedDate ?? Date())
+        \#(totalStep)startDate ==> \#(startDate ?? "")
+        \#(totalStep)endDate ==> \#(endDate ?? "")
+        \#(totalStep)stampDate ==> \#(stampDate ?? "")
+        \#(totalStep)createdDate ==> \#(createdDate ?? "")
+        \#(totalStep)lastModifiedDate ==> \#(lastModifiedDate ?? "")
         \#(totalStep)sequences ==> \#(sequences ?? -10000)
         \#(totalStep)userID ==> \#(userID ?? "")
         \#(totalStep)location ==> \#(location ?? "")

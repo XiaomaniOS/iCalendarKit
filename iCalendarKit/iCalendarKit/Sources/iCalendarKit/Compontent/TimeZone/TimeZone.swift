@@ -37,10 +37,23 @@ public final class TimeZoneStandard: Component {
         switch property.name {
         case .tzOffsetFrom:
             tzOffsetFrom = property.valueInfo.value
+            configureCalendarTimeZoneString(property.valueInfo.value)
         case .tzOffsetTo:
             tzOffsetTo = property.valueInfo.value
         default:
             return
+        }
+    }
+    
+    private func configureCalendarTimeZoneString(_ value: String) {
+        var parent = self.parent
+        while let parentComponent = parent {
+            if let calendar = parentComponent as? Calendar, nil == calendar.timeZoneString {
+                calendar.timeZoneString = value
+                return
+            }
+            
+            parent = parentComponent.parent
         }
     }
 }
