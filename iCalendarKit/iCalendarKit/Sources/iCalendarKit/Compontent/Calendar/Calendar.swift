@@ -9,7 +9,7 @@
 import Foundation
 
 public final class Calendar: Component {
-    var timeZoneString: String?
+    public var timeZoneString: String?
     
     public required init(_ type: RegistryTypes.Component) {
         super.init(type)
