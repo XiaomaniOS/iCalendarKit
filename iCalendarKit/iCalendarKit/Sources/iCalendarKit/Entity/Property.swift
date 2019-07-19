@@ -23,13 +23,13 @@ public struct Parameter {
 
 public struct Property {
     public private(set) var name: RegistryTypes.Property
-    public private(set) var valueInfo: Value
+    public private(set) var data: Value
     public private(set) var parameters: [Result<Parameter, ParseError.Parameter>]?
     
     func description(_ step: Int = 0, _ perStep: String = "    " ) -> String {
         let totalStep = (0...step + 1).reduce("", { (r, _)  in r + perStep })
         
-        var result = "\n" + totalStep + "=> \(name): \(valueInfo.value)"
+        var result = "\n" + totalStep + "=> \(name): \(data.value)"
         
         if let parameters = parameters {
             result += parameters.reduce("\n" + totalStep + "parameters:" + "\n", {

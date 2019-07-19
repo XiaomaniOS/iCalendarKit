@@ -18,7 +18,7 @@ public final class TimeZone: Component {
     public override func configure(_ property: Property) {
         switch property.name {
         case .tzID:
-            tzID = property.valueInfo.value
+            tzID = property.data.value
         default:
             return
         }
@@ -36,10 +36,10 @@ public final class TimeZoneStandard: Component {
     public override func configure(_ property: Property) {
         switch property.name {
         case .tzOffsetFrom:
-            tzOffsetFrom = property.valueInfo.value
-            configureCalendarTimeZoneString(property.valueInfo.value)
+            tzOffsetFrom = property.data.value
+            configureCalendarTimeZoneString(property.data.value)
         case .tzOffsetTo:
-            tzOffsetTo = property.valueInfo.value
+            tzOffsetTo = property.data.value
         default:
             return
         }
@@ -69,9 +69,9 @@ public final class TimeZoneDaylight: Component {
     public override func configure(_ property: Property) {
         switch property.name {
         case .tzOffsetFrom:
-            tzOffsetFrom = property.valueInfo.value
+            tzOffsetFrom = property.data.value
         case .tzOffsetTo:
-            tzOffsetTo = property.valueInfo.value
+            tzOffsetTo = property.data.value
         default:
             return
         }

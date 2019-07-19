@@ -13,8 +13,9 @@ class ViewController: UIViewController {
     enum CalendarFile: String, CaseIterable {
         case outlook
         case gmail
-        case wangyi02
-        case calendar
+        case gmailAllday
+//        case wangyi02
+//        case calendar
 //        case basic
 //        case totalTimeZone
 //        case universityFormatted

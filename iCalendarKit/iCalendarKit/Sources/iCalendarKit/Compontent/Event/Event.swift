@@ -9,8 +9,8 @@
 import Foundation
 
 public final class Event: Component {
-    public var startDate: String?
-    public var endDate: String?
+    public var startDate: Property?
+    public var endDate: Property?
     public var stampDate: String?
     public var createdDate: String?
     public var lastModifiedDate: String?
@@ -37,7 +37,7 @@ public final class Event: Component {
     public override func configure(_ property: Property) {
         switch property.name {
         case .uID:
-            userID = property.valueInfo.value
+            userID = property.data.value
         case .class:
             return
         case .status:
@@ -45,26 +45,26 @@ public final class Event: Component {
         case .transp:
             return
         case .created:
-            createdDate = property.valueInfo.value
+            createdDate = property.data.value
         case .dtStamp:
-            stampDate = property.valueInfo.value
+            stampDate = property.data.value
         case .dtStart:
-            startDate = property.valueInfo.value
+            startDate = property
         case .dtEnd:
-            endDate = property.valueInfo.value
+            endDate = property
         case .summary:
-            summary = property.valueInfo.value
+            summary = property.data.value
         case .attendee:
             if nil == attendees {
                 attendees = []
             }
             attendees?.append(property)
         case .location:
-            location = property.valueInfo.value
+            location = property.data.value
         case .priority:
-            priority = Int(property.valueInfo.value)
+            priority = Int(property.data.value)
         case .sequence:
-            sequences = Int(property.valueInfo.value)
+            sequences = Int(property.data.value)
         case .organizer:
             organizer = property
         default:
@@ -82,8 +82,8 @@ public final class Event: Component {
         
         let result = #"""
         
-        \#(totalStep)startDate ==> \#(startDate ?? "")
-        \#(totalStep)endDate ==> \#(endDate ?? "")
+        \#(totalStep)startDate ==> \#(startDate?.description(step + 1, perStep) ?? "")
+        \#(totalStep)endDate ==> \#(endDate?.description(step + 1, perStep) ?? "")
         \#(totalStep)stampDate ==> \#(stampDate ?? "")
         \#(totalStep)createdDate ==> \#(createdDate ?? "")
         \#(totalStep)lastModifiedDate ==> \#(lastModifiedDate ?? "")

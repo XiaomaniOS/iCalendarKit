@@ -215,7 +215,7 @@ class Parser {
         // without parameters
         guard separator == ";", let colonIndex = trailing.firstIndex(of: ":") else {
             let property = Property(name: name,
-                                    valueInfo: Value(name: .text, value: trailing),
+                                    data: Value(name: .text, value: trailing),
                                     parameters: nil)
             return .success(property)
         }
@@ -224,7 +224,7 @@ class Parser {
         let valueString = String(trailing.suffix(from: trailing.index(after: colonIndex)))
         
         let property = Property(name: name,
-                                valueInfo: Value(name: .text, value: valueString),
+                                data: Value(name: .text, value: valueString),
                                 parameters: paremeters)
         
         return .success(property)
