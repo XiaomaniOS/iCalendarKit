@@ -221,12 +221,11 @@ class Parser {
         }
         
         let paremeters = parseParameters(of: String(trailing.prefix(upTo: colonIndex)))
-        let valueString = String(trailing.suffix(from: colonIndex))
+        let valueString = String(trailing.suffix(from: trailing.index(after: colonIndex)))
         
         let property = Property(name: name,
-                                          valueInfo: Value(name: .text,
-                                                                     value: valueString),
-                                          parameters: paremeters)
+                                valueInfo: Value(name: .text, value: valueString),
+                                parameters: paremeters)
         
         return .success(property)
     }

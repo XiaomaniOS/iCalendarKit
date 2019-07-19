@@ -11,6 +11,9 @@ import iCalendarKit
 
 class ViewController: UIViewController {
     enum CalendarFile: String, CaseIterable {
+        case outlook
+        case gmail
+        case wangyi02
         case calendar
 //        case basic
 //        case totalTimeZone
@@ -33,12 +36,10 @@ class ViewController: UIViewController {
     
     func testParser() {
         CalendarFile.allCases.forEach {
+            print("\($0.rawValue) === === === === === === === === === === === === === === === === === === === === === ")
+            
             do {
-//                let calendar = try CalendarKit.prase(withFilePath: $0.path)
-//                print(calendar.description())
-                
                 let components = try CalendarKit.praseComponent(withFilePath: $0.path)
-                print(components.count)
                 print(components.first!.description())
             } catch let error {
                 print(error)
