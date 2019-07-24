@@ -11,9 +11,10 @@ import iCalendarKit
 
 class ViewController: UIViewController {
     enum CalendarFile: String, CaseIterable {
-        case outlook
-        case gmail
-        case gmailAllday
+//        case outlook
+//        case gmail
+        case gmail2
+//        case gmailAllday
 //        case wangyi02
 //        case calendar
 //        case basic

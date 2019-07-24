@@ -12,6 +12,7 @@
 		B05929E122E1ADB200F99259 /* wangyi02.ics in Resources */ = {isa = PBXBuildFile; fileRef = B05929E022E1ADB200F99259 /* wangyi02.ics */; };
 		B05929E322E1B19200F99259 /* gmail.ics in Resources */ = {isa = PBXBuildFile; fileRef = B05929E222E1B19200F99259 /* gmail.ics */; };
 		B05929E522E1B69100F99259 /* gmailAllday.ics in Resources */ = {isa = PBXBuildFile; fileRef = B05929E422E1B69100F99259 /* gmailAllday.ics */; };
+		B05929E722E1C4B100F99259 /* gmail2.ics in Resources */ = {isa = PBXBuildFile; fileRef = B05929E622E1C4B000F99259 /* gmail2.ics */; };
 		B0CC0FE122D6D35A00A6CD2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC0FE022D6D35A00A6CD2A /* AppDelegate.swift */; };
 		B0CC0FE322D6D35A00A6CD2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC0FE222D6D35A00A6CD2A /* ViewController.swift */; };
 		B0CC0FE622D6D35A00A6CD2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CC0FE422D6D35A00A6CD2A /* Main.storyboard */; };
@@ -474,6 +475,7 @@
 		B05929E022E1ADB200F99259 /* wangyi02.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wangyi02.ics; sourceTree = "<group>"; };
 		B05929E222E1B19200F99259 /* gmail.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gmail.ics; sourceTree = "<group>"; };
 		B05929E422E1B69100F99259 /* gmailAllday.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gmailAllday.ics; sourceTree = "<group>"; };
+		B05929E622E1C4B000F99259 /* gmail2.ics */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gmail2.ics; sourceTree = "<group>"; };
 		B0CC0FDD22D6D35A00A6CD2A /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0CC0FE022D6D35A00A6CD2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0CC0FE222D6D35A00A6CD2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -971,6 +973,7 @@
 		B0CC0FF822D6D39100A6CD2A /* ics files */ = {
 			isa = PBXGroup;
 			children = (
+				B05929E622E1C4B000F99259 /* gmail2.ics */,
 				B05929E422E1B69100F99259 /* gmailAllday.ics */,
 				B05929E222E1B19200F99259 /* gmail.ics */,
 				B05929E022E1ADB200F99259 /* wangyi02.ics */,
@@ -1695,6 +1698,7 @@
 				B0CC136522D6D39200A6CD2A /* calendar.ics in Resources */,
 				B0CC12D222D6D39200A6CD2A /* Manila.ics in Resources */,
 				B0CC133722D6D39200A6CD2A /* Cairo.ics in Resources */,
+				B05929E722E1C4B100F99259 /* gmail2.ics in Resources */,
 				B0CC12DF22D6D39200A6CD2A /* Bishkek.ics in Resources */,
 				B0CC12D122D6D39200A6CD2A /* Hong_Kong.ics in Resources */,
 				B0CC11CC22D6D39200A6CD2A /* Cape_Verde.ics in Resources */,
